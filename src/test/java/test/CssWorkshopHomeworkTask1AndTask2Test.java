@@ -27,6 +27,12 @@ public class CssWorkshopHomeworkTask1AndTask2Test {
 
     }
 
+    @AfterEach
+    public void tearDown(){
+
+        driver.quit();
+    }
+
     @Test
     @DisplayName("Task 1: Check Table 1 and assert string Google in row 2")
     public void table1GoogleStringTest(){
@@ -57,16 +63,6 @@ public class CssWorkshopHomeworkTask1AndTask2Test {
         //Assert
         assertEquals(expectedResult, actualResult);
 
-    }
-
-
-
-
-
-    @AfterEach
-    public void tearDown(){
-
-       driver.quit();
     }
 
 }

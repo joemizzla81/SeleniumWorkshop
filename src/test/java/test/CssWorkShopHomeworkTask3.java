@@ -25,6 +25,13 @@ public class CssWorkShopHomeworkTask3 {
 
     }
 
+    @AfterEach
+    public void tearDown(){
+
+        driver.quit();
+
+    }
+
     @Test
     @DisplayName("Insert strings into input fields")
     public void inputFieldsTest() throws InterruptedException {
@@ -52,21 +59,10 @@ public class CssWorkShopHomeworkTask3 {
         Thread.sleep(1000);
         shadow1.findElement(By.cssSelector("#pizza")).sendKeys("pizza");
 
-        driver.findElement(By.xpath("//input[@id='inp_val']")).sendKeys("another first crush");
+
 
 
 
     }
-
-
-
-
-    @AfterEach
-    public void tearDown(){
-
-     // driver.quit();
-
-    }
-
 
 }
