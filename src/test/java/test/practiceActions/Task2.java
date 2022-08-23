@@ -58,7 +58,7 @@ public class Task2 {
         wait.until(ExpectedConditions.elementToBeClickable(doubleClickField));
         act.doubleClick(doubleClickField).perform();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        WebElement inputFieldAfterDoubleClick = driver.findElement(By.xpath("//input[@value='Double click to edit']"));
+        WebElement inputFieldAfterDoubleClick = driver.findElement(By.cssSelector("#actions > div > div:nth-child(20) > div > form > div > input"));
         String actualText = inputFieldAfterDoubleClick.getAttribute("value");
 
         //Assert
