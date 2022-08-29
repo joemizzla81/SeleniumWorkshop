@@ -48,7 +48,6 @@ public class Task2 {
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         Actions act = new Actions(driver);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
         String expectedText = "Double click to edit";
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
