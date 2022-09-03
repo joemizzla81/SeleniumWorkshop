@@ -38,7 +38,6 @@ public class Task1 {
         //Arrange
 
         driver.navigate().to("http://www.worldslongestwebsite.com/");
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
 
         //Act
 
