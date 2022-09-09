@@ -1,9 +1,11 @@
+/*
 package test.generics.homework.aufgabe2;
 
 import java.util.ArrayList;
 
 import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
 import static java.util.Collections.EMPTY_LIST;
+
 
 public class LocalList<A> {
 
@@ -61,3 +63,4 @@ public class LocalList<A> {
 
 
 }
+*/
