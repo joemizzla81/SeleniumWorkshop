@@ -1,4 +1,4 @@
-/*
+
 package test.generics.homework.aufgabe2;
 
 import java.util.ArrayList;
@@ -24,11 +24,16 @@ public class LocalList<A> {
     }
 
     public int size() {
-        return length();
+        size = LocalList.size();
+        return size();
     }
 
     public boolean isEmpty() {
+    boolean ans = LocalList.isEmpty();
+    if (ans == true){
         return true;
+    }else
+    return false;
     }
 
     public boolean contains(Object o) {
@@ -63,4 +68,4 @@ public class LocalList<A> {
 
 
 }
-*/
+

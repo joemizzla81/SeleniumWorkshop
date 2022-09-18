@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -70,6 +71,7 @@ public class Task2 {
         //Assert
         assertEquals(expectedRowCount,rows_count);
         assertEquals(expectedCompanyNames, actualCompanyNames);
+
 
     }
 
