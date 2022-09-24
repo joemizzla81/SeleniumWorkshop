@@ -1,4 +1,4 @@
-package test.practiceAssertions;
+package test.practiceHamcrest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -10,17 +10,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task2 {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class Task3 {
 
     private WebDriver driver;
 
@@ -30,7 +28,6 @@ public class Task2 {
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
-
     }
 
     @AfterEach
@@ -48,37 +45,23 @@ public class Task2 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         int expectedRowCount = 6;
-        List<String> expectedCompanyNames = new ArrayList<>();
-        expectedCompanyNames.add("Google");
-        expectedCompanyNames.add("Meta");
-        expectedCompanyNames.add("Microsoft");
-        expectedCompanyNames.add("Island Trading");
-        expectedCompanyNames.add("Adobe");
-        expectedCompanyNames.add("Amazon");
 
         //Act
         driver.findElement(By.id("ez-accept-all")).click();
 
         List<WebElement> companyColumn = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr/td[1]"));
         int rows_count = companyColumn.size();
-        System.out.println("No of companyColumn rows are : " + rows_count);
 
         List<String> actualCompanyNames = new ArrayList<>();
         for (WebElement companyName :companyColumn){
             actualCompanyNames.add(companyName.getText());
         }
 
-        System.out.println(actualCompanyNames);
-
 
         //Assert
-        assertEquals(expectedRowCount,rows_count);
-        assertEquals(expectedCompanyNames, actualCompanyNames);
-
-
+        assertThat(rows_count, is(equalTo(expectedRowCount)));
+        assertThat(actualCompanyNames, contains("Google", "Meta", "Microsoft", "Island Trading", "Adobe", "Amazon"));
 
 
     }
-
-
 }

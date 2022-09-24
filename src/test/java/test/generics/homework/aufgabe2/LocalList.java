@@ -36,18 +36,7 @@ public class LocalList<A> {
     return false;
     }
 
-    public boolean contains(Object o) {
-        LocalList<A> l = this;
-        while (l.tail != null) {
-            if (x == null) {
-                if (l.head == null) return true;
-            } else {
-                if (l.head.equals(x)) return true;
-            }
-            l = l.tail;
-        }
-        return false;
-    }
+
 
     public boolean add(A a) {
         if(a != null){

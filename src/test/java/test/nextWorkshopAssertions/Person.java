@@ -22,6 +22,11 @@ public class Person {
         this.firstName = firstName;
     }
 
+    @Override
+    public String toString(){
+        return " {\"firstName\": \"" + this.firstName + "\": \"" + this.lastName + "\"}";
+    }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
