@@ -1,9 +1,10 @@
-/*
+
 package test.generics.homework.aufgabe2;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
 import static java.util.Collections.EMPTY_LIST;
 
 
@@ -24,7 +25,7 @@ public class LocalList<A> {
     }
 
     public int size() {
-        size = LocalList.size();
+        int size = LocalList.size();
         return size();
     }
 
@@ -47,14 +48,63 @@ public class LocalList<A> {
     }
 
     public boolean remove(Object o) {
-        if (!contains(o)) {
+        if (!LocalList.contains(o)) {
             return false;
         }
         return true;
     }
 
+    public boolean containsAll(LocalList<A> ll) {
+        if (LocalList.containsAll(LocalList)){
+            return true;
+        }
+            return false;
+    }
+
+    public boolean addAll(LocalList<A> ll){
+       if (LocalList.addAll(LocalList)){
+           return true;
+       }
+       return false;
+    }
+
+    public boolean addAll(int index, LocalList<A> ll){
+        if (LocalList.addAll(index, LocalList)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeAll(LocalList<A> ll){
+       if (LocalList.removeAll(LocalList)) {
+           return true;
+       }
+       return false;
+    }
+
+    public void clear(){
+        LocalList.clear();
+    }
+
+    public A get(int index){
+        A element = LocalList.get(index);
+        return element;
+    }
+
+    public A remove(int index){
+        A element = LocalList.get(index);
+        LocalList.remove(index);
+        return element;
+    }
+
+    public LocalList<A> subList(int a, int b){
+
+        List<A> LocalList2 =  LocalList.subList(a,b);
+
+        return (test.generics.homework.aufgabe2.LocalList<A>) LocalList2;
+    }
 
 
 
 }
-*/
+
