@@ -1,4 +1,4 @@
-
+/*
 package test.generics.homework.aufgabe2;
 
 import java.util.ArrayList;
@@ -57,4 +57,4 @@ public class LocalList<A> {
 
 
 }
-
+*/
