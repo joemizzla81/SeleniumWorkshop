@@ -3,6 +3,7 @@ package test.designPatternsPractiseTask2.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,13 @@ public class BasePage {
 
     public String getText(By by){
         return driver.findElement(by).getText();
+    }
+
+    public void hover(By by){
+        Actions action = new Actions(driver);
+        WebElement element = driver.findElement(by);
+        action.moveToElement(element);
+        action.click().build().perform();
     }
 
 }

@@ -3,8 +3,6 @@ package test.designPatternsPractiseTask2.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.util.List;
-
 public class WomenCategory extends BasePage {
 
     private WebDriver driver;
@@ -28,6 +26,14 @@ public class WomenCategory extends BasePage {
 
     By categoryNameLocator = By.cssSelector(".cat-name");
     By enabledFilterCategoryLocator = By.cssSelector("div[id='enabled_filters'] ul li");
+
+    By firstProductContainerLocator = By.cssSelector("#center_column > ul > li:nth-child(1) > div");
+
+    By priceOfFirstProductLocator = By.cssSelector("#center_column > ul > li:nth-child(1) > div > div.right-block > div.content_price > span");
+
+    By addToCartBtnFirstContainer = By.xpath("//a[@data-id-product='1']/child::span");
+
+    By proceedToCheckoutBtn = By.cssSelector("a[title='Proceed to checkout']");
 
     public void clickTopsCategoryLink(){
         click(topsCategoryLinkLocator);
@@ -75,5 +81,26 @@ public class WomenCategory extends BasePage {
 
     public String getNameOfCategoryFilter(){
         return getText(enabledFilterCategoryLocator);
+    }
+
+    public void hoverOverFirstProductContainer(){
+        hover(firstProductContainerLocator);
+    }
+
+    public void clickAddToCartBtn(){
+        click(addToCartBtnFirstContainer);
+    }
+
+
+    public void clickCheckoutBtn(){
+        click(proceedToCheckoutBtn);
+    }
+
+    public String getTextOfFirstAddToCartBtn(){
+        return getText(addToCartBtnFirstContainer);
+    }
+
+    public String getPriceOfFirstProduct(){
+        return getText(priceOfFirstProductLocator);
     }
 }

@@ -165,4 +165,20 @@ public class WomenCategoryTests {
         //Assert
         assertThat(womenCategory.getDressesFirstSubcategoryListItem(), containsString(expectedText));
     }
+
+    @Test
+    @DisplayName("Add to cart button available when hovering over first product container")
+    public void addToCartBtnAvailable(){
+
+        //Arrange
+        String expectedText = "Add to cart";
+
+        //Act
+        womenCategory.hoverOverFirstProductContainer();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
+        //Assert
+        assertThat(womenCategory.getTextOfFirstAddToCartBtn(), containsString(expectedText));
+    }
+
 }
