@@ -85,7 +85,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickTopsCatalogCheckbox();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //Assert
         assertThat(womenCategory.getNameOfCategoryFilter(), containsString(expectedText));
@@ -100,7 +100,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickDressesCatalogCheckbox();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //Assert
         assertThat(womenCategory.getNameOfCategoryFilter(), containsString(expectedText));
