@@ -1,4 +1,4 @@
-package test.designPatternsPractiseTask2.test;
+package test.designPatternsPractiseTask.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -7,13 +7,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import test.designPatternsPractiseTask2.pages.ShoppingCart;
-import test.designPatternsPractiseTask2.pages.WomenCategory;
+import test.designPatternsPractiseTask.pages.ShoppingCart;
+import test.designPatternsPractiseTask.pages.WomenCategory;
 
 import java.time.Duration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.containsString;
 
 public class ShoppingCartTests {
@@ -39,7 +38,7 @@ public class ShoppingCartTests {
 
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
@@ -60,11 +59,9 @@ public class ShoppingCartTests {
 
         //Act
         womenCategory.hoverOverFirstProductContainer();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         womenCategory.clickAddToCartBtn();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         womenCategory.clickCheckoutBtn();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
 
         //Assert
         assertThat(shoppingCart.getShoppingCartPageTitle(), containsString(expectedPageTitle));

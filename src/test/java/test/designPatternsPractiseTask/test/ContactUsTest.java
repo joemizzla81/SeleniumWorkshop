@@ -1,4 +1,4 @@
-package test.desinPatternsPracticeTask1.test;
+package test.designPatternsPractiseTask.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -7,13 +7,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import test.desinPatternsPracticeTask1.pages.ContactUs;
+import test.designPatternsPractiseTask.pages.ContactUs;
+
 
 import java.time.Duration;
 
-
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
 
 public class ContactUsTest {
 

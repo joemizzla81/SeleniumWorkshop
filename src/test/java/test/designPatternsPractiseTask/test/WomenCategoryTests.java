@@ -1,4 +1,4 @@
-package test.designPatternsPractiseTask2.test;
+package test.designPatternsPractiseTask.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -7,11 +7,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import test.designPatternsPractiseTask2.pages.WomenCategory;
+import test.designPatternsPractiseTask.pages.WomenCategory;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -36,7 +34,7 @@ public class WomenCategoryTests {
 
         driver.manage().window().maximize();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
@@ -55,7 +53,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickTopsCategoryLink();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Assert
         assertThat(womenCategory.getCategoryName(), containsString(expectedText));
@@ -70,7 +68,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickDressesCategoryLink();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
 
         //Assert
         assertThat(womenCategory.getCategoryName(), containsString(expectedText));
@@ -85,7 +83,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickTopsCatalogCheckbox();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         //Assert
         assertThat(womenCategory.getNameOfCategoryFilter(), containsString(expectedText));
@@ -100,7 +98,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickDressesCatalogCheckbox();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(12));
 
         //Assert
         assertThat(womenCategory.getNameOfCategoryFilter(), containsString(expectedText));
@@ -115,7 +113,7 @@ public class WomenCategoryTests {
 
         //Act
         womenCategory.clickTopsSubcategoryLink();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Assert
         assertThat(womenCategory.getCategoryName(), containsString(expectedText));

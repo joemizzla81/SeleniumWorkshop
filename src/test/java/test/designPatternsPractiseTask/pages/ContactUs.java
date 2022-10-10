@@ -1,25 +1,24 @@
-package test.desinPatternsPracticeTask1.pages;
+package test.designPatternsPractiseTask.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
 
 public class ContactUs extends BasePage {
 
-    By subjectHeadingLocator = By.id("id_contact");
+    private final By subjectHeadingLocator = By.id("id_contact");
 
-    By emailAddressInputLocator = By.id("email");
+    private final By emailAddressInputLocator = By.id("email");
 
-    By orderReferenceInputLocator = By.id("id_order");
+    private final By orderReferenceInputLocator = By.id("id_order");
 
-    By messageBoxInputLocator = By.id("message");
+    private final By messageBoxInputLocator = By.id("message");
 
-    By sendBtnLocator = By.id("submitMessage");
+    private final By sendBtnLocator = By.id("submitMessage");
 
-    By failureMessageLocator = By.cssSelector("#center_column > div > ol > li");
+    private final By failureMessageLocator = By.cssSelector("#center_column > div > ol > li");
 
-    By successMessageLocator = By.cssSelector("#center_column > p");
+    private final By successMessageLocator = By.cssSelector("#center_column > p");
 
 
     private WebDriver driver;
