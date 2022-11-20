@@ -2,6 +2,7 @@ package facadePatternHomework.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import test.designPatternsPractiseTask.pages.BasePage;
 
 public class ShoppingCart extends BasePage {
 
